@@ -7,7 +7,7 @@ const myFunction = () => {
   connect();
 };
 
-const connect = function () {
+const connect = function (key) {
   const conn = net.createConnection({
     host: '135.23.222.131',
     port: 50542,
@@ -19,12 +19,9 @@ const connect = function () {
     console.log('Successfully connected to game server');
     conn.write('Name: BHJ');
     
-    // setTimeout(() => {
-    //   conn.write('Move: up');
-    // }, 50);
-    // setTimeout(() => {
-    //   conn.write('Move: up');
-    // }, 100);
+    if (key === '\0075') {
+      conn.write('Move: up');
+    }
     
   });
 
