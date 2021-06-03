@@ -1,9 +1,9 @@
 const net = require("net");
-
+const { IP, PORT } = require("./constants");
 const connect = function (key) {
   const conn = net.createConnection({
-    host: '135.23.222.131',
-    port: 50542,
+    host: IP,
+    port: PORT,
   });
 
   conn.setEncoding("utf8");
@@ -15,7 +15,6 @@ const connect = function (key) {
     if (key === '\0075') {
       conn.write('Move: up');
     }
-    
   });
 
 
